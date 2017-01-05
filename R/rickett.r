@@ -6,9 +6,10 @@
 #' @export
 #' @examples
 #' message()
-message <- function(req) {
+
+message <- function(id = NULL, timestamp = NULL, result, status, sessionId) {
   tryCatch(
-    processMessage(req),
+    processMessage(result),
     error = function(e) {
       return(conditionMessage(e))
     }
