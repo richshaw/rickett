@@ -25,7 +25,7 @@ message <- function(...) {
 #' @param req Request from api.ai
 processMessage <- function(req) {
   func <- req$result$metadata$intentName
-  do.call(func,req)
+  do.call(func,list('req' = req))
 }
 
 ## Behavior functions
