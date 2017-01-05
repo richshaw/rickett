@@ -7,9 +7,10 @@
 #' @examples
 #' message()
 
-message <- function(id = NULL, timestamp = NULL, result, status, sessionId) {
+message <- function(...) {
+  req <- list(...)
   tryCatch(
-    processMessage(result),
+    processMessage(req),
     error = function(e) {
       return(conditionMessage(e))
     }
