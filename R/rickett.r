@@ -44,7 +44,7 @@ finance.quote <- function(req) {
   if(is.na(quote$Last)) {
     speech <- sprintf("Gosh, I can't find the price of %s, you should probably fire me.",ticker)
   } else {
-    speech <- sprintf("%s is trading at %f. Today we've seen a change of %f which is %s. Volume is running at $i.",
+    speech <- sprintf("%s is trading at %.2f. Today we've seen a change of %+.2f which is %s. Volume is running at %i.",
                     ticker,quote$Last,quote$Change,quote$`% Change`,quote$Volume)
   }
 
