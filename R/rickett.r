@@ -24,8 +24,8 @@ message <- function(...) {
 processMessage <- function(req) {
   speech <- "This is ground control to major tom"
   list(
-    "speech" = speech,
-    "displayText" = speech,
-    "source" = "stat-server"
+    "speech" = unbox(speech),
+    "displayText" = unbox(speech),
+    "source" = unbox("stat-server")
   )
 }
