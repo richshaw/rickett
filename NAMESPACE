@@ -2,3 +2,4 @@
 
 export(message)
 importFrom(jsonlite,unbox)
+importFrom(quantmod,getQuote)
