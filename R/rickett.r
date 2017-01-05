@@ -35,8 +35,19 @@ processMessage <- function(req) {
 #' Gets stock price from web service
 #' @param req Request from api.ai
 #' @importFrom jsonlite unbox
+#' @importFrom quantmod getQuote
 finance.quote <- function(req) {
-  speech <- "This is ground control to major tom"
+
+  ticker <- req$result$parameters$ticker
+  quote <- as.list(getQuote(ticker))
+
+  if(is.na(quote$Last)) {
+    speech <- sprintf("Gosh, I can't find the price of %s, you should probably fire me.",ticker)
+  } else {
+    speech <- sprintf("%s is trading at %f. Today we've seen a change of %f which is %s. Volume is running at $i.",
+                    ticker,quote$Last,quote$Change,quote$`% Change`,quote$Volume)
+  }
+
   list(
     "speech" = unbox(speech),
     "displayText" = unbox(speech),
