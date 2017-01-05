@@ -21,6 +21,7 @@ message <- function(...) {
 #'
 #' Helper function to point request to correct parsing function
 #' @param req Request from api.ai
+#' @importFrom jsonlite unbox
 processMessage <- function(req) {
   speech <- "This is ground control to major tom"
   list(

@@ -4,7 +4,7 @@
 \alias{message}
 \title{Message}
 \usage{
-message(req)
+message(...)
 }
 \arguments{
 \item{req}{Request from api.ai}
