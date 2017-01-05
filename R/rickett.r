@@ -9,12 +9,14 @@
 
 message <- function(...) {
   req <- list(...)
-  tryCatch(
-    processMessage(req),
-    error = function(e) {
-      return(conditionMessage(e))
-    }
-  )
+  # tryCatch(
+  #   processMessage(req),
+  #   error = function(e) {
+  #     return(conditionMessage(e))
+  #   }
+  # )
+
+  processMessage(req)
 }
 
 #' Process Message
