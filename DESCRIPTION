@@ -1,0 +1,11 @@
+Package: Rickett
+Title: Rickett trader chat bot
+Version: 0.0.0.9000
+Authors@R: person("Richard", "Shaw", email = "richard.shaw@bnsly.com", role = c("aut", "cre"))
+Description: What the package does (one paragraph).
+Depends:
+    R (>= 3.3.2)
+License: MIT
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 5.0.1
